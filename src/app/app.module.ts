@@ -5,6 +5,11 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatListModule} from '@angular/material/list';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { FormsModule } from '@angular/forms'; 
+
 import 'hammerjs'; 
 
 import { AppComponent } from './app.component';
@@ -43,11 +48,15 @@ import { LoginComponent } from './login/login.component';
     FlexLayoutModule,
     MatDialogModule,
     MatListModule,
+    MatFormFieldModule, 
+    MatInputModule,
+    MatCheckboxModule,
     AppRoutingModule,
     MatToolbarModule,
     MatGridListModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule 
   ],
   entryComponents: [
         LoginComponent

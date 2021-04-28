@@ -1,40 +1,43 @@
-          <div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.gt-md="space-around center"
+          <div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.gt-mat="space-around center"
      fxLayoutGap="10px" fxLayoutGap.xs="0">
   <div fxFlex="40">
     <div fxFlex *ngIf="dish">
-      <md-card>
-        <md-card-header>
-          <md-card-title>
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>
             <h3 *ngIf="dish">{{dish.name | uppercase}}</h3>
-          </md-card-title>
-        </md-card-header>
-        <img md-card-image src="{{dish.image}}" alt="{{dish.name}}">
-        <md-card-content>
+          </mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="{{dish.image}}" alt="{{dish.name}}">
+        <mat-card-content>
           <p>{{ dish.description}} </p>
-        </md-card-content>
-        <md-card-actions>
-          <button md-button (click)="goBack()">BACK</button>
-          <button md-button>LIKE</button>
-          <button md-button>SHARE</button>
-        </md-card-actions>
-      </md-card>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button [routerLink]="['/dishdetail', prev]"><span class="fa fa-chevron-left fa-lg"></span></button>
+          <button mat-button (click)="goBack()">BACK</button>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+          <span class="flex-spacer"></span>
+          <button mat-button [routerLink]="['/dishdetail', next]"><span class="fa fa-chevron-right fa-lg"></span></button>
+        </mat-card-actions>
+      </mat-card>
     </div>
   </div>
   <div fxFlex="40" *ngIf="dish">
     <h3>Comments</h3>
-    <md-list>
-      <md-list-item *ngFor="let comment of dish.comments">
-        <p md-line>
+    <mat-list>
+      <mat-list-item *ngFor="let comment of dish.comments">
+        <p mat-line>
           <span>{{comment.comment}}</span>
         </p>
-        <p md-line>
+        <p mat-line>
           <span>{{comment.rating}} Stars</span>
         </p>
-        <p md-line>
+        <p mat-line>
           <span>-- {{comment.author}} {{ comment.date | date }}</span>
         </p>
-      </md-list-item>
-    </md-list>
+      </mat-list-item>
+    </mat-list>
   </div>
   <div [hidden]="dish">
     <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>

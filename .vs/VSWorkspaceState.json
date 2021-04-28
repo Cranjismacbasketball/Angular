@@ -9,8 +9,8 @@
     "\\src\\app\\home",
     "\\src\\app\\login",
     "\\src\\app\\menu",
-    "\\src\\app\\services"
+    "\\src\\app\\Shared"
   ],
-  "SelectedNode": "\\src\\app\\menu\\menu.component.ts",
+  "SelectedNode": "\\src\\app\\services\\promotion.service.ts",
   "PreviewInSolutionExplorer": false
 }
